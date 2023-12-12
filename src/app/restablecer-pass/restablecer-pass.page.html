@@ -1,0 +1,22 @@
+<ion-content [fullscreen]="true">
+    <div class="container" id="contenedor">
+        <div class="row justify-content-center ">
+            <ion-img src="assets/icon/caballo.png" style="position: fixed;"></ion-img>
+            <div class="col-sm-6 " id="form">
+                <ion-title class="h3 mb-4">REESTABLECER CONTRASEÑA</ion-title>
+
+                <ion-item class="mb-3">
+                    <ion-label position="floating">Correo Institucional</ion-label>
+                    <ion-input type="email" required placeholder="Ingrese su correo de DUOC UC"
+                        [(ngModel)]="User.correo"></ion-input>
+                </ion-item>
+
+
+                <ion-button expand="full" class="border border-dark mb-3" (click)="resetPassword()"
+                    [disabled]="(User.correo)==''">Reestablecer Contraseña</ion-button>
+                <ion-button expand="full" class="border border-dark mb-3" routerLink="/login"
+                    >Cancelar</ion-button>
+            </div>
+        </div>
+    </div>
+</ion-content>

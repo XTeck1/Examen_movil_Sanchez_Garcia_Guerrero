@@ -1,0 +1,32 @@
+<ion-content [fullscreen]="true">
+    <div class="container" id="contenedor">
+        <div class="row justify-content-center ">
+            <ion-img src="assets/icon/caballo.png" style="position: fixed;"></ion-img>
+            <div class="col-sm-6 " id="form">
+                <ion-title class="h1 mb-5">INICIO DE SESION</ion-title>
+
+                <ion-item class="mb-3">
+                    <ion-label position="floating">Correo Institucional</ion-label>
+                    <ion-input type="email" required placeholder="Ingrese su correo de DUOC UC" [(ngModel)]="User.correo"></ion-input>
+                </ion-item>
+                <ion-item class="mb-3">
+                    <ion-label position="floating">Contraseña</ion-label>
+                    <ion-input type="password" required placeholder="Ingrese su contraseña de DUOC UC" [(ngModel)]="User.pass">
+                    </ion-input>
+                </ion-item>
+
+                <div class="alert alert-danger" [hidden]="bloqueo">
+                    <ion-text>El correo o la contraseña es incorrecto, revise e intentelo denuevo.</ion-text>
+                </div>
+
+                <ion-button expand="full" class="border border-dark mb-3" (click)="loginFirebase()" [disabled]="(User.correo && User.pass)==''">Ingresar</ion-button>
+
+                <div class="text-center">
+                    <ion-text>Si aun no tienes cuenta, <span routerLink="/registro">Registrate Aqui.</span></ion-text><br>
+                    <ion-text>Si olvidaste tu contraseña, <span routerLink="/restablecer-pass">Haz click aqui.</span></ion-text>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</ion-content>

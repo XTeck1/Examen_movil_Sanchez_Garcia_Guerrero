@@ -1,0 +1,16 @@
+<ion-content [fullscreen]="true">
+    <div id="map" style="position: absolute;">
+
+    </div>
+
+
+    <div *ngFor="let i of usuario">
+        <div *ngIf="i.vehiculo == 'No' else Conductor ">
+            <ion-button routerLink="/buscar-vehiculo">Cancelar Viaje</ion-button>
+        </div>
+
+        <ng-template #Conductor>
+            <ion-button routerLink="/inicio">Terminar Viaje</ion-button>
+        </ng-template>
+    </div>
+</ion-content>
